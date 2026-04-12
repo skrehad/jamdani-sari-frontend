@@ -10,7 +10,7 @@ export const getAllUsers = async () => {
     throw new Error("No token found");
   }
 
-  const res = await fetch("NEXT_PUBLIC_API/api/user", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/user`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -32,7 +32,7 @@ export const getUserById = async (userId: string) => {
   const token = cookieStore.get("accessToken")?.value;
   if (!token) throw new Error("No token");
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/user/${userId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/user/${userId}`, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
@@ -53,7 +53,7 @@ export const deleteUser = async (userId: string) => {
     throw new Error("No token found");
   }
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/user/${userId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/user/${userId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

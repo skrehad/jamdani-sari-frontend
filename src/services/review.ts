@@ -8,7 +8,7 @@ export const createReview = async (formData: FormData) => {
 
   if (!token) throw new Error("No token found");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/review", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/review`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`, // ✅ only this
@@ -27,7 +27,7 @@ export const createReview = async (formData: FormData) => {
 };
 
 export const getAllReviews = async () => {
-  const res = await fetch("NEXT_PUBLIC_API/api/review", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/review`, {
     cache: "no-store",
   });
   return res.json();
@@ -41,7 +41,7 @@ export const deleteReview = async (id: string) => {
     throw new Error("No token found");
   }
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/review/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/review/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

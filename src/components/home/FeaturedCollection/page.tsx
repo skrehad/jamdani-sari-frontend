@@ -16,7 +16,7 @@ export default async function FeaturedCollection() {
     <section className="py-24 px-6">
       {/* HEADER */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        <h2 className="text-3xl text-black md:text-4xl font-bold tracking-tight">
           Top Luxury Collection
         </h2>
         <p className="text-gray-500 mt-3">

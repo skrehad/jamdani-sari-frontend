@@ -3,7 +3,7 @@ export const uploadGalleryImage = async (file: File, token: string) => {
   const formData = new FormData();
   formData.append("image", file);
 
-  const res = await fetch("NEXT_PUBLIC_API/api/gallery/upload", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/gallery/upload`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -18,9 +18,3 @@ export const uploadGalleryImage = async (file: File, token: string) => {
 
   return res.json(); // { data: { url, publicId, ... } }
 };
-
-// export const getGalleryImages = async () => {
-//   const res = await fetch("NEXT_PUBLIC_API/api/gallery");
-//   if (!res.ok) throw new Error("Failed to fetch gallery images");
-//   return res.json(); // { data: Gallery[] }
-// };

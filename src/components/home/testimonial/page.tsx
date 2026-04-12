@@ -46,10 +46,10 @@ export default function Testimonial() {
   const visibleReviews = reviews.slice(index, index + visibleCount);
 
   return (
-    <section className="bg-gradient-to-b from-white via-pink-50 to-white py-24 px-6">
+    <section className="bg-linear-to-b from-white via-pink-50 to-white py-24 px-6">
       {/* HEADER */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-bold">
+        <h2 className="text-3xl text-black md:text-4xl font-bold">
           What Our Customers Say
         </h2>
         <p className="text-gray-500 mt-3">

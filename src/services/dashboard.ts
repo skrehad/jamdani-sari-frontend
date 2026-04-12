@@ -10,7 +10,7 @@ export const getUserDashboardStats = async () => {
     throw new Error("No token found");
   }
 
-  const res = await fetch("NEXT_PUBLIC_API/api/dashboard/user", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/dashboard/user`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -33,7 +33,7 @@ export const getAdminDashboardStats = async () => {
 
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/dashboard/admin", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/dashboard/admin`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   });

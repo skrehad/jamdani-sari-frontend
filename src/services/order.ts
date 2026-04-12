@@ -13,7 +13,7 @@ export const createOrder = async (payload: CreateOrderPayload) => {
 
   if (!token) throw new Error("No token found");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/order", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/order`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export const getAllOrders = async () => {
     throw new Error("No token found");
   }
 
-  const res = await fetch("NEXT_PUBLIC_API/api/order", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/order`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ export const updateOrderStatus = async (orderId: string, status: string) => {
     throw new Error("No token found");
   }
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/order/status/${orderId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/order/status/${orderId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export const deleteOrder = async (orderId: string) => {
     throw new Error("No token found");
   }
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/order/${orderId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/order/${orderId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

@@ -10,7 +10,7 @@ export const getMyOrders = async () => {
 
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/order/my-orders", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/order/my-orders`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -33,7 +33,7 @@ export const deleteUserOrder = async (orderId: string) => {
 
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/order/${orderId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/order/${orderId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

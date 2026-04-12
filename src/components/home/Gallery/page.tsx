@@ -22,7 +22,7 @@ export default function Gallery() {
     <section className="pt-28 pb-8 px-6 bg-[#FFF5F5]">
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl text-black md:text-4xl font-bold mb-4">
           Our Exclusive Jamdani Gallery
         </h2>
         <p className="text-gray-600">

@@ -9,7 +9,7 @@ export const createProductService = async (formData: FormData) => {
 
   if (!token) throw new Error("No token found");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/product", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/product`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`, // only token
@@ -30,7 +30,7 @@ export const createProductService = async (formData: FormData) => {
 };
 
 export const getAllProducts = async () => {
-  const res = await fetch("NEXT_PUBLIC_API/api/product", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/product`, {
     method: "GET",
     cache: "no-store",
   });
@@ -52,12 +52,15 @@ export const singleProductById = async (productId: string) => {
     throw new Error("No token found");
   }
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/product/${productId}`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API}/api/product/${productId}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   if (!res.ok) {
     const err = await res.text();
@@ -76,12 +79,15 @@ export const deleteProduct = async (productId: string) => {
     throw new Error("No token found");
   }
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/product/${productId}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API}/api/product/${productId}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   if (!res.ok) {
     const err = await res.text();
@@ -93,7 +99,7 @@ export const deleteProduct = async (productId: string) => {
 };
 
 export const updateProduct = async (id: string, data: Partial<IProduct>) => {
-  const res = await fetch(`NEXT_PUBLIC_API/api/product/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/product/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",

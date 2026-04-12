@@ -6,7 +6,7 @@ export const getAllWishlists = async () => {
   const token = cookieStore.get("accessToken")?.value;
   if (!token) throw new Error("No token found");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/wishlist", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/wishlist`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   });
@@ -26,7 +26,7 @@ export const createWishlist = async (productId: string) => {
 
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/wishlist", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/wishlist`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const getMyWishlist = async () => {
   const token = cookieStore.get("accessToken")?.value;
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/wishlist/my-wishlist", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/wishlist/my-wishlist`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   });
@@ -69,7 +69,7 @@ export const deleteWishlist = async (wishlistId: string) => {
   const token = cookieStore.get("accessToken")?.value;
   if (!token) throw new Error("No token");
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/wishlist/${wishlistId}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/wishlist/${wishlistId}`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${token}` },
   });

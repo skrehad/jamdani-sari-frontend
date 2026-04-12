@@ -22,7 +22,7 @@ export default function CategoryGrid() {
     <section className="pt-24 pb-6 px-6 ">
       {/* HEADER */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        <h2 className="text-3xl text-black md:text-4xl font-bold tracking-tight">
           Explore Categories
         </h2>
         <p className="text-gray-500 mt-3">Choose your perfect fabric style</p>
@@ -35,7 +35,7 @@ export default function CategoryGrid() {
             <div className="group relative p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
               {/* gradient top line */}
               <div
-                className={`h-1 w-16 rounded-full bg-gradient-to-r ${cat.accent} mb-6 group-hover:w-24 transition-all duration-300`}
+                className={`h-1 w-16 rounded-full bg-linear-to-r ${cat.accent} mb-6 group-hover:w-24 transition-all duration-300`}
               />
 
               {/* title */}

@@ -23,7 +23,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
           <Image src={logoImage} alt="logo" height={38} width={38} />
-          <span className="font-semibold text-lg">Jamdani Cart</span>
+          <span className="font-semibold text-black text-lg">Jamdani Cart</span>
         </Link>
 
         {/* MENU */}

@@ -68,11 +68,11 @@ export default function Stats() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 bg-gradient-to-b from-white via-pink-50 to-white"
+      className="relative py-24 px-6 bg-linear-to-b from-white via-pink-50 to-white"
     >
       {/* HEADER */}
       <div className="max-w-3xl mx-auto text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        <h2 className="text-3xl md:text-4xl text-black font-bold tracking-tight">
           Our Journey in Numbers
         </h2>
 

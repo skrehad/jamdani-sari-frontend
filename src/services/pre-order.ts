@@ -6,7 +6,7 @@ export const getAllPreOrders = async () => {
   const cookieStore = await cookies();
   const token = cookieStore.get("accessToken")?.value;
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/pre-order`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/pre-order`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -23,7 +23,7 @@ export const getSinglePreOrder = async (id: string) => {
 
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/pre-order/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/pre-order/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
     cache: "no-store",
   });
@@ -43,7 +43,7 @@ export const getMyPreOrders = async () => {
 
   if (!token) throw new Error("Not authenticated");
 
-  const res = await fetch("NEXT_PUBLIC_API/api/pre-order/my-pre-orders", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/pre-order/my-pre-orders`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -63,7 +63,7 @@ export const deletePreOrder = async (id: string) => {
   const cookieStore = await cookies();
   const token = cookieStore.get("accessToken")?.value;
 
-  const res = await fetch(`NEXT_PUBLIC_API/api/pre-order/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/pre-order/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
