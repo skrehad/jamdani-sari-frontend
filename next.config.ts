@@ -18,3 +18,9 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+module.exports = {
+  experimental: {
+    turbo: false,
+  },
+};
